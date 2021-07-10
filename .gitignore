@@ -1,1 +1,5 @@
 target/
+jenkins-sonarqube/jenkins-data/
+jenkins-sonarqube/sonar-data/
+jenkins-sonarqube/sonar-extensions/
+jenkins-sonarqube/postgres_data/
