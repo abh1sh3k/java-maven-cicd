@@ -1,8 +1,7 @@
 version: "3"
-
 services:
-	tomcat:
-		image: sampleapp:latest
-		restart: always
-		ports:
-			- 8080:8080
+  tomcat:
+    image: sampleapp:latest
+    restart: always
+    ports:
+      - 8080:8080
