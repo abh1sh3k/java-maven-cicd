@@ -1,7 +1,6 @@
 pipeline {
   agent { label 'docker-java-slave' }
 
-  }
   stages {
     stage('checkout') {
       steps {
