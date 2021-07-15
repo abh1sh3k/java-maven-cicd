@@ -8,5 +8,24 @@ pipeline {
       }
     }
 
+    stage('build') {
+      steps {
+        sh "mvn clean package"
+        script {
+          app = docker.build("abh1sh3k/sampleapp")
+        }
+      }
+    }
+
+    stage('Push Image') {
+      steps {
+        script {
+          withDockerRegistry(credentialsId: 'docker', url: 'https://registry.hub.docker.com') {
+            app.push("${env.BUILD_NUMBER}")            
+            app.push("latest")
+          }
+        }
+      }
+    }
   }
 }
